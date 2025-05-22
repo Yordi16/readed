@@ -11,17 +11,19 @@
       <div class="flex justify-between items-center max-w-[1400px] mx-auto">
         <h1 class="capitalize text-3xl font-extrabold">readed</h1>
 
-        <div class="capitalize hidden xl:flex gap-12">
-          <a href="">gaming</a>
-          <a href="">news</a>
-          <a href="">brainrot</a>
-          <a href="">others</a>
+        <div class="flex items-center gap-10">
+          <div class="capitalize hidden xl:flex gap-12">
+            <a href="">gaming</a>
+            <a href="">news</a>
+            <a href="">brainrot</a>
+            <a href="">others</a>
+          </div>
+          <button
+            class="bg-[#000] py-3 px-6 hidden xl:flex text-white capitalize text-sm cursor-pointer font-semibold border border-black hover:shadow-[4px_4px_0_0_black] duration-200"
+          >
+            mulai ngeblog!
+          </button>
         </div>
-        <button
-          class="bg-[#537FE7] py-3 px-6 hidden xl:flex text-white capitalize text-sm cursor-pointer font-semibold border border-black hover:shadow-[4px_4px_0_0_black] duration-200"
-        >
-          mulai ngeblog!
-        </button>
 
         <button id="btn-menu" class="block xl:hidden">
           <img
@@ -34,13 +36,14 @@
       </div>
     </nav>
 
+    <!--! mobile menu -->
     <div class="block xl:hidden">
       <div
         class="fixed left-0 right-0 h-screen bg-black opacity-50 z-10 hidden"
         id="overlay"
       ></div>
 
-      <!-- Sidebar menu -->
+      <!--! Sidebar menu -->
       <div
         class="fixed right-0 translate-x-full transition-transform duration-300 ease-in-out w-1/2 h-screen bg-[#F6F6F9] border-l z-20 p-3"
         id="sidebar"
@@ -62,36 +65,8 @@
     </div>
 
     <main class="w-full px-5 xl:px-0 xl:max-w-[1400px] mx-auto mt-5">
-      <!--? hero section -->
-      <section class="flex flex-col items-center my-10 md:my-20 pb-40">
-        <div class="text-center uppercase font-roboto mb-10 md:mb-16">
-          <h3 class="text-xl md:text-4xl font-light">
-            <span class="bg-[#C0EEF2]">Readed</span>
-          </h3>
-          <h1 class="text-5xl md:text-9xl font-black my-1.5">everything</h1>
-          <h3 class="text-xl md:text-3xl font-light">right now &amp; here</h3>
-        </div>
-        <form action="" class="flex gap-1">
-          <input
-            class="bg-white border border-black text-black focus:outline-none px-5 w-full xl:w-[778px] py-3 text-xl font-montserrat"
-            type="text"
-            placeholder="Cari..."
-          />
-          <button
-            class="bg-[#537FE7] py-3 px-6 text-white capitalize font-montserrat cursor-pointer text-xl border border-black duration-200 hover:shadow-[4px_4px_0_0_black]"
-          >
-            search
-          </button>
-        </form>
-      </section>
       <!--? section popular -->
       <section class="font-inter">
-        <h1
-          class="font-montserrat text-3xl capitalize font-semibold whitespace-nowrap mr-5"
-        >
-          blog popular
-        </h1>
-
         <div class="flex flex-col xl:flex-row gap-10 mt-5">
           <a href="post.html" class="xl:w-2/3">
             <img
@@ -228,7 +203,7 @@
         </h1>
 
         <div
-          class="mt-5 flex flex-wrap md:grid-cols-3 xl:grid-cols-4 md:grid gap-8"
+          class="mt-5 flex flex-wrap md:grid-cols-3 xl:grid-cols-4 md:grid gap-2"
         >
           <a
             href="#"
@@ -424,7 +399,7 @@
           </a>
         </div>
         <button
-          class="max-w-2xl border w-full mx-auto my-10 block py-3 hover:shadow-[4px_4px_0_0_black] duration-200 border-b-4 font-semibold capitalize"
+          class="border w-full mx-auto my-10 block py-3 hover:shadow-[4px_4px_0_0_black] duration-200 border-b-4 font-semibold capitalize"
         >
           Tampilkan Lebih Banyak
         </button>
