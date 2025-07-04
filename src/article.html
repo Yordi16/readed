@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post</title>
+    <link rel="stylesheet" href="./css/output.css" />
+  </head>
+  <style>
+    #container-detail-artikel h1 {
+      font-size: 32px !important;
+    }
+    #container-detail-artikel p {
+      line-height: 1.7;
+    }
+  </style>
+  <body>
+    <nav class="bg-[F6F6F9] py-5 px-5 xl:px-0 font-montserrat z-50">
+      <div class="flex justify-between items-center max-w-[1400px] mx-auto">
+        <a href="./index.html">
+          <h1 class="capitalize text-3xl font-extrabold">readed</h1>
+        </a>
+
+        <div class="capitalize hidden xl:flex gap-12">
+          <a href="">gaming</a>
+          <a href="">news</a>
+          <a href="">brainrot</a>
+          <a href="">others</a>
+        </div>
+        <button
+          class="bg-[#537FE7] py-3 px-6 hidden xl:flex text-white capitalize text-sm cursor-pointer font-semibold border border-black hover:shadow-[4px_4px_0_0_black] duration-200"
+        >
+          mulai ngeblog!
+        </button>
+
+        <button id="btn-menu" class="block xl:hidden">
+          <img
+            src="../public/icons/menu.svg"
+            alt="menu"
+            id="menu-icon"
+            class="size-7"
+          />
+        </button>
+      </div>
+    </nav>
+    <div class="max-w-[1400px] mx-auto grid md:grid-cols-3 px-5 md:px-0 gap-5">
+      <div class="col-span-2 mt-10" id="container-detail-artikel">
+        <!-- detai -->
+      </div>
+      <div class="mt-10">
+        <h1 class="font-bold text-3xl mb-10">Rekomendasi</h1>
+        <div class="flex flex-col gap-5" id="container-detail-artikel-mini">
+          <!-- detail -->
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-black text-white py-10 font-montserrat mt-10">
+      <div class="container mx-auto px-4">
+        <h1 class="text-start text-2xl font-bold">Readed</h1>
+
+        <hr class="border-t border-white my-6" />
+        <div class="flex items-center gap-5 mt-3">
+          <img src="../public/icons/instagram.svg" class="size-5" alt="" />
+          <img src="../public/icons/fb.svg" class="size-5" alt="" />
+          <img src="../public/icons/twitter.svg" class="size-5" alt="" />
+          <img src="../public/icons/tiktok.svg" class="size-5" alt="" />
+        </div>
+
+        <div class="flex justify-end">
+          <p class="text-sm md:text-base">&copy;2025 All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../src/js/main.js"></script>
+    <script src="./js/fetch.js"></script>
+  </body>
+</html>
