@@ -1,25 +1,3 @@
-// function formatTanggal(tanggalStr) {
-//   const sekarang = new Date();
-//   const tanggal = new Date(tanggalStr);
-
-//   sekarang.setHours(0, 0, 0, 0);
-//   tanggal.setHours(0, 0, 0, 0);
-
-//   const selisihMs = sekarang - tanggal;
-//   const selisihHari = Math.floor(selisihMs / (1000 * 60 * 60 * 24));
-
-//   if (selisihHari === 0) return "Hari ini";
-//   if (selisihHari === 1) return "1 hari yang lalu";
-//   if (selisihHari === 2) return "2 hari yang lalu";
-//   if (selisihHari === 3) return "3 hari yang lalu";
-//   if (selisihHari === 4) return "4 hari yang lalu";
-//   if (selisihHari === 5) return "5 hari yang lalu";
-//   if (selisihHari === 6) return "6 hari yang lalu";
-//   if (selisihHari === 7) return "7 hari yang lalu";
-
-//   return `${selisihHari} hari yang lalu`;
-// }
-
 function formatTanggal(tanggal) {
   const date = new Date(tanggal);
   return date.toLocaleDateString("id-ID", {
@@ -29,35 +7,43 @@ function formatTanggal(tanggal) {
   });
 }
 
-const containerArticleBig = document.getElementById("container-artikel-big");
-fetch(
-  "https://redmin.test/api/article/cara-membuat-animasi-menggunakna-clip-studio-paint-54059"
-)
-  .then((response) => response.json())
-  .then((article) => {
-    containerArticleBig.innerHTML = `
-              <img
-                src="https://redmin.test/${article.image_url}"
-                alt="${article.article_name}"
-              class="aspect-video object-cover border-2 border-black w-full"
-            />
-            <span
-              class="bg-black text-white py-1 px-3 capitalize text-[10px] my-2.5 inline-block"
-              >
-              ${article.article_type || "Apakaden"}
-            </span>
-            <h1 class="text-3xl font-semibold font-inter capitalize">
-              ${article.article_name}
-            </h1> 
-            <span class="text-xs flex items-center gap-1 mt-2">
-                  <img class="size-4" src="../../public/icons/time.svg" />
-                  ${formatTanggal(article.created_at || "Apakaden")}
-                </span>
+document.addEventListener("DOMContentLoaded", () => {
+  const containerArticleBig = document.getElementById("container-artikel-big");
+
+  fetch(
+    "https://redmin.test/api/article/cara-membuat-animasi-menggunakna-clip-studio-paint-54059"
+  )
+    .then((response) => response.json())
+    .then((article) => {
+      const cardBig = document.createElement("a");
+      cardBig.href = `article.html?slug=${article.slug}`;
+      cardBig.className = "xl:w-2/3";
+      cardBig.innerHTML = `
+        <img
+          src="https://redmin.test/${article.image_url}"
+          alt="${article.article_name}"
+          class="aspect-video object-cover border-2 border-black w-full"
+        />
+        <span class="bg-black text-white py-1 px-3 capitalize text-[10px] my-2.5 inline-block">
+          ${article.article_type || "Apakaden"}
+        </span>
+        <h1 class="text-3xl font-semibold font-inter capitalize">
+          ${article.article_name}
+        </h1>
+        <span class="text-xs flex items-center gap-1 mt-2">
+          <img class="size-4" src="../../public/icons/time.svg" />
+          ${new Date(article.created_at).toLocaleDateString()}
+        </span>
       `;
-  })
-  .catch((error) => {
-    containerArticleBig.innerHTML = `<p style="color: red;">Gagal mengambil data: ${error}</p>`;
-  });
+
+      // ⬅️ Tambahkan ke DOM
+      containerArticleBig.appendChild(cardBig);
+    })
+    .catch((error) => {
+      console.error(error);
+      containerArticleBig.innerHTML = `<p style="color: red;">Gagal mengambil data: ${error}</p>`;
+    });
+});
 
 const containerArticleMini = document.getElementById("container-artikel-mini");
 fetch("https://redmin.test/api/articles")
@@ -66,7 +52,7 @@ fetch("https://redmin.test/api/articles")
     const limitedArticles = data.data.slice(0, 5);
     limitedArticles.forEach((article) => {
       const card = document.createElement("a");
-      card.href = "#";
+      card.href = `article.html?slug=${article.slug}`;
       card.className = "flex gap-2.5 items-stretch";
 
       card.innerHTML = `
