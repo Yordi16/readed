@@ -141,7 +141,7 @@ fetch(`https://redmin.test/api/article/${slug}`)
   .then((res) => res.json())
   .then((article) => {
     container.innerHTML = `
-        <h1 class="text-4xl font-bold mb-10 capitalize">
+        <h1 class="text-4xl font-bold capitalize">
           ${article.article_name}
         </h1>
         <img

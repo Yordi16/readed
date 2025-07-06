@@ -48,23 +48,26 @@
     }
   </style>
   <body>
-    <nav class="bg-[F6F6F9] py-5 px-5 xl:px-0 font-montserrat z-50">
+    <nav
+      class="bg-[F6F6F9] py-5 px-5 xl:px-0 font-montserrat z-50 border-b border-black"
+    >
       <div class="flex justify-between items-center max-w-[1400px] mx-auto">
-        <a href="./index.html">
-          <h1 class="capitalize text-3xl font-extrabold">readed</h1>
-        </a>
+        <h1 class="capitalize text-3xl font-extrabold">readed</h1>
 
-        <div class="capitalize hidden xl:flex gap-12">
-          <a href="">gaming</a>
-          <a href="">news</a>
-          <a href="">brainrot</a>
-          <a href="">others</a>
-        </div>
-        <button
-          class="bg-[#537FE7] py-3 px-6 hidden xl:flex text-white capitalize text-sm cursor-pointer font-semibold border border-black hover:shadow-[4px_4px_0_0_black] duration-200"
+        <!-- <div class="flex items-center gap-10">
+          <div class="capitalize hidden xl:flex gap-12">
+            <a href="">gaming</a>
+            <a href="">news</a>
+            <a href="">brainrot</a>
+            <a href="">others</a>
+          </div>
+        </div> -->
+        <a
+          href="https://redmin.test/"
+          class="bg-[#fff] py-3 px-6 hidden xl:flex text-[#000] capitalize text-sm cursor-pointer font-semibold border border-black hover:shadow-[4px_4px_0_0_black] duration-200 border-b-2"
         >
           mulai ngeblog!
-        </button>
+        </a>
 
         <button id="btn-menu" class="block xl:hidden">
           <img
@@ -76,12 +79,13 @@
         </button>
       </div>
     </nav>
+
     <div class="max-w-[1400px] mx-auto grid md:grid-cols-3 px-5 md:px-0 gap-5">
       <div class="col-span-2 mt-10" id="container-detail-artikel">
         <!-- detai -->
       </div>
       <div class="mt-10">
-        <h1 class="font-bold text-3xl mb-10">Rekomendasi</h1>
+        <h1 class="font-bold text-3xl my-5">Rekomendasi</h1>
         <div class="flex flex-col gap-5" id="container-detail-artikel-mini">
           <!-- detail -->
         </div>
